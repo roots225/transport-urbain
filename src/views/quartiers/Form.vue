@@ -8,9 +8,9 @@
         <form @submit.prevent="handleSubmit">
           <div class="form-group">
             <label>Nom</label>
-            <input type="text" class="form-control" v-model="form.name" placeholder="">
+            <input type="text" class="form-control" id="name" placeholder="">
           </div>
-          <button type="submit" class="btn btn-primary">Enregistrer</button>
+          <button type="submit" class="btn btn-primary" id="btnAjoutQuartier">Enregistrer</button>
         </form>
       </div>
     </div>
@@ -27,6 +27,23 @@ export default {
         name: ''
       }
     }
+  },
+  mounted () {
+    const btnAjouter = document.querySelector('#btnAjoutQuartier')
+    btnAjouter.addEventListener('click', () => {
+      const inputValue = document.querySelector('#name').value
+      if (inputValue !== '') {
+        this.$firebase.firestore().collection('quartiers').add({
+          name: inputValue
+        }).then(reponse => {
+          this.$router.push({name: 'quartiers'})
+        }).catch(function (error) {
+          console.log(error)
+        })
+      } else {
+        alert('Veuillez renseigner le champ nom du quartier')
+      }
+    })
   },
   methods: {
     handleSubmit () {

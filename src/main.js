@@ -8,6 +8,7 @@ import JQuery from 'jquery'
 import VueSlideBar from 'vue-slide-bar'
 import VueSweetalert2 from 'vue-sweetalert2'
 import VueGoodWizard from 'vue-good-wizard'
+import helpers from './helpers'
 // eslint-disable-next-line
 let $ = JQuery
 
@@ -16,6 +17,7 @@ const options = {
   cancelButtonColor: '#ff7674'
 }
 
+Vue.use(helpers)
 Vue.use(BootstrapVue)
 Vue.use(VueSweetalert2, options)
 Vue.use(VueGoodWizard)

@@ -16,3 +16,6 @@ package-lock.json
 *.ntvs*
 *.njsproj
 *.sln
+
+# ignore
+.env.js

@@ -40,6 +40,11 @@ export default {
     realtimeStatistics,
     usersDoughnutChart
   },
+  mounted () {
+    this.$firebase.firestore().collection('todos').get().then(response => {
+      console.log(response)
+    })
+  },
   methods: {
     toggleProBanner: function () {
       $('body').toggleClass('pro-banner-collapse')

@@ -10,6 +10,6 @@ Selectionnez votre destination
 liste déroulante des différentes destination
 
 Les entites de notre applications :
-- l’entitée quartier  (nom du quatier, situation géophique de la gare, identifiant unique)
+- l’entitée quartier  (nom du quatier, identifiant unique)
 - l’entitée catégorie des moyens de transport (nom, identifiant)
-- l’entitée moyens de transport (identifiant, identifiant de la catégorie, identifiant du quartier, coût, adresse de départ) 
+- l’entitée moyens de transport (identifiant, identifiant de la catégorie, identifiant du quartier, coût, destination) 
